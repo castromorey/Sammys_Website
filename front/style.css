@@ -28,6 +28,12 @@ body{
     color: whitesmoke;
     display: flex;
 }
+
+.bar{
+    display: flex;
+
+}
+
 .menu{
     display: flex;
     list-style: none;
