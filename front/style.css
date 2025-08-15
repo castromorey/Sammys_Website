@@ -1,0 +1,63 @@
+body{
+    display: grid;
+    font-size: 1.5em;
+    min-height: 100vh;
+    grid-gap: 0.5em;
+    grid-template-rows: 2em 1fr 4em;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 'header header'
+                         'main  aside'
+                         'footer  footer'
+     
+
+}
+
+.item{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    
+}
+
+.header{
+ 
+    justify-content: center;
+    grid-area: header;
+    background-color: darkgreen;
+    color: whitesmoke;
+    display: flex;
+}
+.menu{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 60px;
+}
+
+.submenu{
+    display: flex;
+    gap: 25px;
+    margin-left: 200px;
+}
+
+.main{
+    grid-area: main;
+}
+
+.footer{
+    grid-area: footer;
+     background-color: darkgreen;
+    color: whitesmoke;
+}
+.social{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 60px;
+}
+/* Definir areas: entre comillas ponermos las filas y para las columnas 
+las separamos por espacios y le ponemos un nombbre
+ejempl: "header header" ahi tenemos una fila y dos columnas llamadas header  */
