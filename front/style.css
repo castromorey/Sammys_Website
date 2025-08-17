@@ -1,9 +1,13 @@
+
+
+
+
 body{
     display: grid;
-    font-size: 1.5em;
+    font-size: 1 em;
     min-height: 100vh;
     grid-gap: 0.5em;
-    grid-template-rows: 2em 1fr 4em;
+    grid-template-rows: 2em 1fr 6em;
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 'header header'
                          'main  aside'
@@ -22,16 +26,23 @@ body{
 
 .header{
  
-    justify-content: center;
+   /* justify-content: center;*/
     grid-area: header;
     background-color: darkgreen;
     color: whitesmoke;
-    display: flex;
+    /*display: flex;*/
 }
 
 .bar{
     display: flex;
 
+}
+
+.logo{
+   
+    padding: 0;
+    margin: 0;
+   
 }
 
 .menu{
@@ -40,6 +51,7 @@ body{
     padding: 0;
     margin: 0;
     gap: 60px;
+    margin-left: 300px;
 }
 
 .submenu{
@@ -54,15 +66,23 @@ body{
 
 .footer{
     grid-area: footer;
-     background-color: darkgreen;
+    background-color: darkgreen;
     color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
 }
 .social{
     list-style: none;
-    display: flex;
+   /* display: flex;*/
     margin: 0;
     padding: 0;
-    gap: 60px;
+    /*gap: 60px;*/
+}
+
+.contact{
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 /* Definir areas: entre comillas ponermos las filas y para las columnas 
 las separamos por espacios y le ponemos un nombbre
