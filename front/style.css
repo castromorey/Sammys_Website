@@ -9,30 +9,64 @@ body{
     grid-gap: 0.5em;
     grid-template-rows: 2em 1fr 6em;
     grid-template-columns: 3fr 1fr;
-    grid-template-areas: 'header header'
+    grid-template-areas: 'nav nav'
                          'main  aside'
                          'footer  footer'
      
 
 }
 
-.item{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-color: whitesmoke;
-    
-}
-
-.header{
- 
+nav{
+ /*Main menu stile*/
    /* justify-content: center;*/
-    grid-area: header;
+    grid-area: nav;
     background-color: darkgreen;
     color: whitesmoke;
+    padding: 0;
     /*display: flex;*/
 }
 
+nav ul{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li{
+    position: relative; /*Necessary for submenu*/
+}
+
+nav ul li a{
+    display: block;
+    padding: 12px 20px;
+    color: green;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+background: grey;
+}
+
+/*Submenu style*/
+nav ul li ul{
+    display: none; /*hide submenu*/
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: grey;
+    min-width: 180px;
+    flex-direction: column;
+}
+
+nav ul li ul li a{
+    padding: 10px 15px;
+}
+
+nav ul li:hover > ul{
+    display: block; /*Show on mouse hover*/
+}
+/*
 .bar{
     display: flex;
 
@@ -59,7 +93,7 @@ body{
     gap: 25px;
     margin-left: 200px;
 }
-
+*/
 .main{
     grid-area: main;
 }
