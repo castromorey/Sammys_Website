@@ -16,14 +16,17 @@ body{
 
 }
 
+.logo{
+    padding: 12px 20px;
+}
 nav{
  /*Main menu stile*/
-   /* justify-content: center;*/
     grid-area: nav;
     background-color: darkgreen;
     color: whitesmoke;
     padding: 0;
-    /*display: flex;*/
+    display: flex;
+ 
 }
 
 nav ul{
@@ -40,7 +43,7 @@ nav ul li{
 nav ul li a{
     display: block;
     padding: 12px 20px;
-    color: green;
+    color: whitesmoke;
     text-decoration: none;
 }
 
@@ -55,7 +58,7 @@ nav ul li ul{
     top: 100%;
     left: 0;
     background: grey;
-    min-width: 180px;
+    min-width: 200px;
     flex-direction: column;
 }
 
@@ -66,34 +69,14 @@ nav ul li ul li a{
 nav ul li:hover > ul{
     display: block; /*Show on mouse hover*/
 }
-/*
-.bar{
-    display: flex;
-
-}
-
-.logo{
-   
-    padding: 0;
-    margin: 0;
-   
-}
-
-.menu{
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 60px;
-    margin-left: 300px;
-}
 
 .submenu{
     display: flex;
-    gap: 25px;
+    padding: 10px 20px;
+    gap: 40px;
     margin-left: 200px;
 }
-*/
+
 .main{
     grid-area: main;
 }
