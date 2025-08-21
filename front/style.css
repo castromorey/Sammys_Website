@@ -26,6 +26,7 @@ nav{
     color: whitesmoke;
     padding: 0;
     display: flex;
+    gap: 60px;
  
 }
 
@@ -45,10 +46,17 @@ nav ul li a{
     padding: 12px 20px;
     color: whitesmoke;
     text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    /*transition: all 06.s ease;*/
 }
 
 nav ul li a:hover{
-background: grey;
+/*background: grey;*/
+color: palegreen;
+text-shadow: 3px 3px 8px rgba(0,0,0, 0.3);
+/*transform: translateY(5px);*/
+
 }
 
 /*Submenu style*/
