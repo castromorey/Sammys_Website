@@ -6,16 +6,14 @@ body{
     display: grid;
     font-size: 1 em;
     min-height: 100vh;
+    background-color: darkgreen;
     grid-gap: 0.5em;
     grid-template-rows: 2em 1fr auto;
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 'nav nav'
                          'main  aside'
                          'footer  footer'
-     
-
-}
-
+                                          }
 .logo{
     
     padding: 7px 20px;
@@ -112,8 +110,33 @@ text-shadow: 3px 3px 8px rgba(215, 62, 192, 0.5);
     cursor: pointer;
 }
 
-.main{
+main{
     grid-area: main;
+    background-color: chocolate;
+}
+
+.image_container{
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    justify-content:space-around;
+}
+
+img{
+    /*width: 500px;
+    height: 250px;*/
+    border: 2px solid #ccc;
+    border-radius: 10px;
+
+}
+
+figcaption{
+    font-style: italic;
+    margin-top: 8px;
+    color: #555;
+}
+aside{
+    background-color: antiquewhite;
 }
 
 .footer{
@@ -145,6 +168,10 @@ footer ul li:hover{
     color: green;
 }
 
+
+/* https://www.southeastpet.com/retailers  tomar como referencia
+formula 420
+* /
 
 /* Definir areas: entre comillas ponermos las filas y para las columnas 
 las separamos por espacios y le ponemos un nombbre
