@@ -7,7 +7,7 @@ body{
     font-size: 1 em;
     min-height: 100vh;
     grid-gap: 0.5em;
-    grid-template-rows: 2em 1fr 6em;
+    grid-template-rows: 2em 1fr auto;
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 'nav nav'
                          'main  aside'
@@ -17,8 +17,10 @@ body{
 }
 
 .logo{
-    padding: 12px 20px;
+    
+    padding: 7px 20px;
 }
+
 nav{
  /*Main menu stile*/
     grid-area: nav;
@@ -26,8 +28,19 @@ nav{
     color: whitesmoke;
     padding: 0;
     display: flex;
-    gap: 60px;
+    gap: 80px;
+
  
+}
+
+span a:not(li a){
+all: unset;
+}
+
+nav span a:hover{
+    cursor: pointer;
+    color: green;
+    
 }
 
 nav ul{
@@ -35,54 +48,68 @@ nav ul{
     padding: 0;
     margin: 0;
     list-style: none;
+    gap: 40px;
 }
 
-nav ul li{
+ ul li{
     position: relative; /*Necessary for submenu*/
+    
 }
 
-nav ul li a{
+nav ul li a:first-child:hover{ /*nav ul li a:first-child:hover*/
+  
+  color: green;   
+}
+
+
+ ul li a{
     display: block;
-    padding: 12px 20px;
+    padding: 7px 20px;
     color: whitesmoke;
     text-decoration: none;
-    font-size: 1em;
-    font-weight: bold;
+ 
     /*transition: all 06.s ease;*/
 }
 
-nav ul li a:hover{
+ ul li a:hover{
 /*background: grey;*/
-color: palegreen;
-text-shadow: 3px 3px 8px rgba(0,0,0, 0.3);
-/*transform: translateY(5px);*/
+/*color: rgb(176, 239, 176);*/
+text-shadow: 3px 3px 8px rgba(215, 62, 192, 0.5);
+
+
 
 }
 
 /*Submenu style*/
-nav ul li ul{
+ ul li ul{
     display: none; /*hide submenu*/
     position: absolute;
     top: 100%;
     left: 0;
-    background: grey;
-    min-width: 200px;
+    background: rgb(229, 237, 217);
+    min-width: 165px;
     flex-direction: column;
 }
 
-nav ul li ul li a{
+ ul li ul li a{
     padding: 10px 15px;
+    color: black;
+    font-size: 0.7em;
 }
 
-nav ul li:hover > ul{
+ ul li:hover > ul{
     display: block; /*Show on mouse hover*/
 }
 
 .submenu{
     display: flex;
-    padding: 10px 20px;
-    gap: 40px;
-    margin-left: 200px;
+    padding: 7px 20px;
+    gap: 85px;
+    margin-left: 170px;
+}
+
+.submenu:hover{
+    cursor: pointer;
 }
 
 .main{
@@ -96,19 +123,29 @@ nav ul li:hover > ul{
     display: flex;
     justify-content: space-around;
 }
+
+footer ul li{
+    margin-top: 5px;
+}
 .social{
     list-style: none;
-   /* display: flex;*/
     margin: 0;
     padding: 0;
-    /*gap: 60px;*/
+    
 }
 
 .contact{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     list-style: none;
 }
+
+footer ul li:hover{
+    cursor: pointer;
+    color: green;
+}
+
+
 /* Definir areas: entre comillas ponermos las filas y para las columnas 
 las separamos por espacios y le ponemos un nombbre
 ejempl: "header header" ahi tenemos una fila y dos columnas llamadas header  */
