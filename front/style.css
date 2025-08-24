@@ -6,9 +6,9 @@ body{
     display: grid;
     font-size: 1 em;
     min-height: 100vh;
-    background-color: darkgreen;
+    /*background-color: darkgreen;*/
     grid-gap: 0.5em;
-    grid-template-rows: 2em 1fr auto;
+    grid-template-rows: 2em auto auto;
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 'nav nav'
                          'main  aside'
@@ -112,12 +112,17 @@ text-shadow: 3px 3px 8px rgba(215, 62, 192, 0.5);
 
 main{
     grid-area: main;
-    background-color: chocolate;
+    /*background-color: chocolate;*/
 }
 
-.image_container{
+main .Contact_us p{
     text-align: center;
-    margin: 20px;
+    color: darkgreen;
+}
+.image_container{
+   
+    text-align: center;
+    margin-top: 100px;
     display: flex;
     justify-content:space-around;
 }
@@ -125,18 +130,31 @@ main{
 img{
     /*width: 500px;
     height: 250px;*/
-    border: 2px solid #ccc;
+    border: 2px solid darkolivegreen;
     border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(65, 194, 75, 0.5);
 
 }
 
 figcaption{
     font-style: italic;
     margin-top: 8px;
-    color: #555;
+    color: darkgreen;
 }
 aside{
     background-color: antiquewhite;
+    text-align: center;
+    color: darkgreen;
+}
+
+aside button{
+    border-radius: 5px;
+    background-color: green;
+    color: aliceblue;
+    width: 90px;
+    height: 30px;
+    border: 2px solid white;
+    margin: 10px;
 }
 
 .footer{
