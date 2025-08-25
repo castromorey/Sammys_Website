@@ -1,196 +1,93 @@
-
-
-
-
-body{
-    display: grid;
-    font-size: 1 em;
-    min-height: 100vh;
-    /*background-color: darkgreen;*/
-    grid-gap: 0.5em;
-    grid-template-rows: 2em auto auto;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: 'nav nav'
-                         'main  aside'
-                         'footer  footer'
-                                          }
-.logo{
-    
-    padding: 7px 20px;
+body {
+  display: grid;
+  gap: 5px;
+  justify-content: space-around;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding-top: 60px; /* espacio para el nav fijo */
+  grid-template-rows: 2em auto auto;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: 'nav nav'
+                       'main aside'
+                       'footer footer'
 }
 
-nav{
- /*Main menu stile*/
-    grid-area: nav;
-    background-color: darkgreen;
-    color: whitesmoke;
-    padding: 0;
-    display: flex;
-    gap: 80px;
-
- 
+/* NAV */
+nav {
+  grid-area: nav;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: darkgreen;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 20px;
+  z-index: 1000;
 }
 
-span a:not(li a){
-all: unset;
+.logo a {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-nav span a:hover{
-    cursor: pointer;
-    color: green;
-    
-}
-
-nav ul{
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    gap: 40px;
-}
-
- ul li{
-    position: relative; /*Necessary for submenu*/
-    
-}
-
-nav ul li a:first-child:hover{ /*nav ul li a:first-child:hover*/
-  
-  color: green;   
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+  margin: 0;
+  padding: 0;
 }
 
 
- ul li a{
-    display: block;
-    padding: 7px 20px;
-    color: whitesmoke;
-    text-decoration: none;
- 
-    /*transition: all 06.s ease;*/
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s;
 }
 
- ul li a:hover{
-/*background: grey;*/
-/*color: rgb(176, 239, 176);*/
-text-shadow: 3px 3px 8px rgba(215, 62, 192, 0.5);
-
-
-
+.menu li a:hover {
+  color: lightgreen;
 }
 
-/*Submenu style*/
- ul li ul{
-    display: none; /*hide submenu*/
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: rgb(229, 237, 217);
-    min-width: 165px;
-    flex-direction: column;
+.search_icon i {
+  color: rgb(245, 239, 239);
+  font-size: 1.2em;
+  cursor: pointer;
 }
 
- ul li ul li a{
-    padding: 10px 15px;
-    color: black;
-    font-size: 0.7em;
+/* MAIN CONTENT */
+main {
+  grid-area: main;
+  /*max-width: 1000px;*/
+  /*margin: 30px auto;*/
+  padding: 10px;
+  background: rgb(240, 230, 230);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
- ul li:hover > ul{
-    display: block; /*Show on mouse hover*/
-}
-
-.submenu{
-    display: flex;
-    padding: 7px 20px;
-    gap: 85px;
-    margin-left: 170px;
-}
-
-.submenu:hover{
-    cursor: pointer;
-}
-
-main{
-    grid-area: main;
-    /*background-color: chocolate;*/
-}
-
-main .Contact_us p{
-    text-align: center;
-    color: darkgreen;
-}
-.image_container{
-   
-    text-align: center;
-    margin-top: 100px;
-    display: flex;
-    justify-content:space-around;
-}
-
-img{
-    /*width: 500px;
-    height: 250px;*/
-    border: 2px solid darkolivegreen;
-    border-radius: 10px;
-    box-shadow: 3px 3px 8px rgba(65, 194, 75, 0.5);
-
-}
-
-figcaption{
-    font-style: italic;
-    margin-top: 8px;
-    color: darkgreen;
-}
 aside{
-    background-color: antiquewhite;
-    text-align: center;
-    color: darkgreen;
-}
+   background: rgb(240, 230, 230);
+  grid-area: aside;
+  border-radius: 10px;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 
-aside button{
-    border-radius: 5px;
-    background-color: green;
-    color: aliceblue;
-    width: 90px;
-    height: 30px;
-    border: 2px solid white;
-    margin: 10px;
-}
-
-.footer{
-    grid-area: footer;
-    background-color: darkgreen;
-    color: whitesmoke;
-    display: flex;
-    justify-content: space-around;
-}
-
-footer ul li{
-    margin-top: 5px;
-}
-.social{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    
-}
-
-.contact{
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-}
-
-footer ul li:hover{
-    cursor: pointer;
-    color: green;
 }
 
 
-/* https://www.southeastpet.com/retailers  tomar como referencia
-formula 420
-* /
-
-/* Definir areas: entre comillas ponermos las filas y para las columnas 
-las separamos por espacios y le ponemos un nombbre
-ejempl: "header header" ahi tenemos una fila y dos columnas llamadas header  */
+/* FOOTER */
+footer {
+  grid-area: footer;
+  text-align: center;
+  padding: 15px;
+  background-color: darkgreen;
+  color: white;
+  margin-top: 30px;
+}
