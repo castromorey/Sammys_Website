@@ -17,5 +17,13 @@ document.querySelectorAll("nav a[data-page]").forEach((link) => {
   });
 });
 
+// Asignar evento a los enlaces del footer
+document.querySelectorAll("footer a[data-page]").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    loadPage(link.getAttribute("data-page"));
+  });
+});
+
 // Cargar la página inicial
 loadPage("home.html");
