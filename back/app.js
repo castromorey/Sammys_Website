@@ -32,7 +32,7 @@ document.querySelectorAll("footer a[data-page]").forEach((link) => {
 });
 
 // Cargar la página inicial
-loadPage("categories.html");
+loadPage("brands.html");
 
 // ------------------- SLIDER -------------------
 function initSlider() {
@@ -57,4 +57,13 @@ function initSlider() {
   setInterval(() => {
     moveSlide(1);
   }, 3000);
+}
+
+//Order button
+function ordenar() {
+  const contenedor = document.getElementById("matriz");
+  const celdas = Array.from(contenedor.children);
+  celdas.sort((a, b) => a.textContent.localeCompare(b.textContent));
+  contenedor, (innerHTML = "");
+  celdas.forEach((celda) => contenedor.appendChild(celda));
 }

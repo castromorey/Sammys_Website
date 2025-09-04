@@ -20,6 +20,49 @@ body {
                        'footer footer'
 }
 
+/* Brands page styles*/
+
+.btn_brand{
+  width: 85px;
+  height: 30px;
+  margin-left: 42px;
+  margin-bottom: 20px;
+  border: 1px solid purple;
+  border-radius: 5px;
+  background-color: #cac1e2;
+  font-size: 0.7em;
+  transition: all 0.2s ease;
+}
+
+.btn_brand:hover{
+  cursor: pointer;
+  background-color: #e3def0;
+  box-shadow: 0 4px 12px rgba(216, 46, 46, 0.2);
+  transform: scale(1.05);
+
+
+}
+
+.brands{
+  margin: 30px auto;
+  text-align: center;
+  color: #6b5b95;
+
+}
+.matriz{
+  display: grid;
+  grid-template-columns: repeat(10, 120px);
+  grid-template-rows: repeat(10, 20px);
+  gap: 5px;
+}
+
+.celda{
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: #6b5b95;
+  
+}
 /* NAV */
 nav {
   grid-area: nav;
