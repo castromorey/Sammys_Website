@@ -61,8 +61,41 @@ body {
   justify-content: center;
   font-size: 14px;
   color: #6b5b95;
-  
+  transition: transform 0.3s ease;
 }
+
+.celda:hover{
+  color: purple;
+  transform: scale(1.09);
+  cursor: pointer;
+ 
+}
+
+/*Products page style*/
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15p;
+  margin: 30px auto;
+  margin-left: 10px;
+
+}
+
+.gallery img{
+border-radius: 10px;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+
+.gallery img:hover{
+transform: scale(1.05);
+}
+
+
+
+
+
 /* NAV */
 nav {
   grid-area: nav;
@@ -278,7 +311,7 @@ aside button:hover{
 .slider {
   position: relative;
   width: 80%;
-  max-width: 500px;
+  max-width: 1000px;
   height: 250px;
   overflow: hidden;
   border-radius: 15px;
@@ -386,7 +419,7 @@ footer .box p, li{
 footer h6{
   margin-top: 15px;
 }
-footer i{
+footer i {
   padding: 5px;
 }
 

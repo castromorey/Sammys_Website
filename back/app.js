@@ -32,7 +32,7 @@ document.querySelectorAll("footer a[data-page]").forEach((link) => {
 });
 
 // Cargar la página inicial
-loadPage("brands.html");
+loadPage("products.html");
 
 // ------------------- SLIDER -------------------
 function initSlider() {
@@ -67,3 +67,19 @@ function ordenar() {
   contenedor, (innerHTML = "");
   celdas.forEach((celda) => contenedor.appendChild(celda));
 }
+
+//Search Product
+/*
+const search = document.getElementById("search");
+const items = document.querySelectorAll("#info li");
+
+search.addEventListener("input", function () {
+  let text = this.value.toLowerCase().trim();
+
+  items.forEach((item) => {
+    //Si el texto coincide con el contenido, mostrar; si no, ocultar
+    item.style.display = item.textContent.toLowerCase().includes(text)
+      ? ""
+      : "none";
+  });
+});*/
