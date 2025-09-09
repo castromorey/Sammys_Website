@@ -64,18 +64,21 @@ function ordenar() {
   const contenedor = document.getElementById("matriz");
   const celdas = Array.from(contenedor.children);
   celdas.sort((a, b) => a.textContent.localeCompare(b.textContent));
-  contenedor, (innerHTML = "");
+  contenedor.innerHTML = "";
   celdas.forEach((celda) => contenedor.appendChild(celda));
 }
 
-//Search Product
-
-/*
+// ------------------- SEARCH -------------------
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.querySelector("#searchInput");
+  const searchInput = document.querySelector("#search");
+  const searchForm = document.querySelector(".search_icon form");
 
-  if (!searchInput) return;
+  if (!searchInput || !searchForm) return;
 
+  // Evitar recarga al enviar el form
+  searchForm.addEventListener("submit", (e) => e.preventDefault());
+
+  // Buscar al escribir
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase();
 
@@ -99,4 +102,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-*/

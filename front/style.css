@@ -456,3 +456,36 @@ footer .social i:hover{
 footer .foot{
   margin-bottom: 10px;
 }
+
+/* SEARCH BAR STYLES */
+.search_icon form {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search_icon input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9em;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search_icon input:focus {
+  border-color: green;
+  box-shadow: 0 0 5px rgba(0,128,0,0.5);
+}
+
+.search_button {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.search_button:hover {
+  background: #f0f0f0;
+}
