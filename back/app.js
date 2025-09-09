@@ -32,7 +32,7 @@ document.querySelectorAll("footer a[data-page]").forEach((link) => {
 });
 
 // Cargar la página inicial
-loadPage("products.html");
+loadPage("brands.html");
 
 // ------------------- SLIDER -------------------
 function initSlider() {
@@ -69,17 +69,34 @@ function ordenar() {
 }
 
 //Search Product
+
 /*
-const search = document.getElementById("search");
-const items = document.querySelectorAll("#info li");
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.querySelector("#searchInput");
 
-search.addEventListener("input", function () {
-  let text = this.value.toLowerCase().trim();
+  if (!searchInput) return;
 
-  items.forEach((item) => {
-    //Si el texto coincide con el contenido, mostrar; si no, ocultar
-    item.style.display = item.textContent.toLowerCase().includes(text)
-      ? ""
-      : "none";
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+
+    // Si estamos en brands.html
+    const brands = document.querySelectorAll(".celda");
+    if (brands.length > 0) {
+      brands.forEach((brand) => {
+        brand.style.display = brand.textContent.toLowerCase().includes(query)
+          ? "flex"
+          : "none";
+      });
+    }
+
+    // Si estamos en products.html
+    const products = document.querySelectorAll(".gallery img");
+    if (products.length > 0) {
+      products.forEach((product) => {
+        const altText = product.alt.toLowerCase();
+        product.style.display = altText.includes(query) ? "block" : "none";
+      });
+    }
   });
-});*/
+});
+*/
