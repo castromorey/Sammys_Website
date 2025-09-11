@@ -31,8 +31,16 @@ document.querySelectorAll("footer a[data-page]").forEach((link) => {
   });
 });
 
+// Asignar evento al enlace del contact us button
+document.querySelectorAll("aside a[data-page]").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    loadPage(link.getAttribute("data-page"));
+  });
+});
+
 // Cargar la página inicial
-loadPage("brands.html");
+loadPage("contact_form.html");
 
 // ------------------- SLIDER -------------------
 function initSlider() {
@@ -59,7 +67,7 @@ function initSlider() {
   }, 3000);
 }
 
-//Order button
+//Order button para ordenar los items en las diferentes páginas
 function ordenar() {
   const contenedor = document.getElementById("matriz");
   const celdas = Array.from(contenedor.children);

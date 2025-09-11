@@ -21,7 +21,197 @@ body {
 }
 
 /* Brands page styles*/
+/* Embedded styles for Coming Soon block (paste into your CSS or keep inline) */
+.coming-soon {
+  background: linear-gradient(180deg, #f7fbf7 0%, #ffffff 100%);
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+  border-top: 4px solid #e6f4e6;
+}
 
+.cs-container {
+  max-width: 920px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(28, 43, 20, 0.06);
+  padding: 28px;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #1f2933;
+}
+
+.cs-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 1.6rem;
+  color: #064e3b; /* deep green for brand tone */
+  letter-spacing: -0.2px;
+}
+
+.cs-sub {
+  margin: 0 0 22px 0;
+  color: #374151;
+  line-height: 1.5;
+  font-size: 0.98rem;
+}
+
+.cs-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: grid;
+  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.cs-categories li {
+  background: #f8faf7;
+  border: 1px solid #e6efe6;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  line-height: 1.4;
+  box-shadow: 0 2px 8px rgba(16, 24, 32, 0.04);
+}
+
+.cs-categories li strong {
+  display: block;
+  color: #0b5a3a;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.cs-note {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.cs-note p {
+  margin: 0;
+  color: #374151;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.cs-cta {
+  display: inline-block;
+  text-decoration: none;
+  background: #0b6b44;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(11, 107, 68, 0.12);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  margin-top: 15px;
+}
+
+.cs-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(11, 107, 68, 0.16);
+}
+
+.cs-footer {
+  margin-top: 38px;
+  text-align: left;
+  color: rgb(240, 186, 186);
+  font-size: 0.85rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+  .cs-container { padding: 18px; }
+  .cs-header h1 { font-size: 1.25rem; }
+  .cs-note { flex-direction: column; align-items: stretch; gap: 10px; }
+  .cs-cta { width: 100%; text-align: center; }
+}
+
+/* CONTACT FORM STYLES */
+.contact-section {
+  background: #f8fafc;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.contact-container h2 {
+  margin-bottom: 10px;
+  color: #064e3b;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.contact-container p {
+  margin-bottom: 25px;
+  color: #374151;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0b6b44;
+  box-shadow: 0 0 0 3px rgba(11, 107, 68, 0.15);
+}
+
+.submit-btn {
+  width: 100%;
+  background: #0b6b44;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background: #064e3b;
+  transform: translateY(-2px);
+}
+
+/*
 .btn_brand{
   width: 85px;
   height: 30px;
@@ -69,7 +259,7 @@ body {
   transform: scale(1.09);
   cursor: pointer;
  
-}
+}*/
 
 /*Products page style*/
 
@@ -281,21 +471,26 @@ aside p{
   color: green;
 }
 
-aside button{
+.aside_btn{
   width: 75px;
   height: 25px;
-  background-color: whitesmoke;
+  background-color:#cac1e2;
   border-radius: 5px;
-  color: green;
-  border: 2px solid lightgray;
- 
+  border: 2px solid #9778ee;
+
 }
 
-aside button:hover{
-  background-color: rgb(53, 88, 3);
-  color: white;
-  cursor: pointer;
+.aside_btn a{
+ text-decoration: none;
+ color: purple 
 }
+  
+.aside_btn, a:hover{
+  cursor: pointer;
+  color: #042019;
+
+}
+
 
 .map{
  margin-top: 50px;
