@@ -47,7 +47,7 @@ document.querySelectorAll("aside a[data-page]").forEach((link) => {
 });
 
 // Cargar la página inicial
-loadPage("products.html");
+loadPage("home.html");
 
 // ------------------- SLIDER -------------------
 function initSlider() {
