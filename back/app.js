@@ -4,6 +4,12 @@ function loadPage(page) {
     .then((data) => {
       document.getElementById("content").innerHTML = data;
 
+      // 🔑 Forzar scroll al top cada vez que se cambia de "página"
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", // puedes quitarlo si no quieres animación
+      });
+
       // Si cargamos categories.html, inicializamos el slider
       if (page === "categories.html") {
         initSlider();
@@ -14,6 +20,7 @@ function loadPage(page) {
         "<p>Error loading content</p>";
     });
 }
+// ---------------------------------
 
 // Asignar evento a los enlaces del menú
 document.querySelectorAll("nav a[data-page]").forEach((link) => {
@@ -40,7 +47,7 @@ document.querySelectorAll("aside a[data-page]").forEach((link) => {
 });
 
 // Cargar la página inicial
-loadPage("contact_form.html");
+loadPage("products.html");
 
 // ------------------- SLIDER -------------------
 function initSlider() {
@@ -109,4 +116,39 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+});
+
+/* Code to clean the contact_form information*/
+const form = document.getElementById("contactForm");
+const confirmation = document.getElementById("confirmation");
+const mailto = document.getElementById("mailtoLink");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const fullname = document.getElementById("fullname").value;
+  const company = document.getElementById("company").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  // Construir mailto
+  const mailtoHref = `mailto:cmcomputer.network@gmail.com?subject=${encodeURIComponent(
+    subject || "New Contact Form Submission"
+  )}&body=${encodeURIComponent(
+    `Full Name: ${fullname}
+Company: ${company}
+Email: ${email}
+Phone: ${phone}
+Message: ${message}`
+  )}`;
+
+  // Abrir cliente de correo
+  mailto.href = mailtoHref;
+  mailto.click();
+
+  // Limpiar formulario y mostrar confirmación
+  form.reset();
+  confirmation.style.display = "block";
 });
