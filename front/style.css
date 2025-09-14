@@ -333,8 +333,7 @@ input:focus, textarea:focus {
 .gallery{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15p;
-  margin: 30px auto;
+  gap: 15px;
   margin-left: 10px;
   margin-top: 80px;
 
@@ -550,40 +549,28 @@ main .cards{
 
 /* ******************************************************************************************* */
 
-aside{
-  grid-area: aside;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  margin-right: 5px;
+.register{
   display: flex;
-  flex-direction: column;
-  background:whitesmoke;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
+  gap: 25px;
+  color: whitesmoke;
 }
 
-aside a{
- 
- text-decoration: none;
- color: green;
- transition: transform 0.3s ease;
+.register i{
+  margin-left: 15px;
 }
-  
-aside a:hover{
+
+.register a{
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 0.8em;
+}
+
+.register a:hover{
   cursor: pointer;
-  color: rgb(165, 108, 165);
-  transform: scale(1.05);
-
+  color: greenyellow;
 }
 
-aside i{
-  color: green;
-  margin: 10px;
-}
-
+/* End register */
 .map{
  margin-top: 50px;
  margin-bottom: 50px;
