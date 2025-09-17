@@ -11,7 +11,7 @@ body {
   justify-content: space-around;
   min-height: 100vh;
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: whitesmoke;
   padding-top: 20px; /* espacio para el nav fijo */
   grid-template-rows: 2em auto auto;
   grid-template-columns: 3fr 10em;
@@ -23,17 +23,18 @@ body {
 /* Brands page styles*/
 
 .coming-soon {
-  background: linear-gradient(180deg, #f7fbf7 0%, #ffffff 100%);
+ /* background: linear-gradient(180deg, #f7fbf7 0%, #ffffff 100%);*/
+ background: whitesmoke;
   padding: 40px 16px;
   display: flex;
   justify-content: center;
-  border-top: 4px solid #e6f4e6;
+  /*border-top: 4px solid #e6f4e6;*/
 }
 
 .cs-container {
   max-width: 920px;
   width: 100%;
-  background: #ffffff;
+  background: whitesmoke;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(28, 43, 20, 0.06);
   padding: 28px;
@@ -43,10 +44,12 @@ body {
 }
 
 .cs-header h1 {
-  margin: 0 0 10px 0;
+  margin: 50px 0 30px 0;
   font-size: 1.6rem;
   color: #064e3b; /* deep green for brand tone */
   letter-spacing: -0.2px;
+  text-align: center;
+  
 }
 
 .cs-sub {
@@ -136,7 +139,7 @@ body {
 /* CONTACT FORM STYLES */
 /* CONTACT FORM STYLES */
 .contact-section {
-  background: #f8fafc;
+  background: whitesmoke;
   padding: 40px 20px;
   display: flex;
   justify-content: center;
@@ -150,6 +153,7 @@ body {
   max-width: 600px;
   width: 100%;
   font-family: Arial, sans-serif;
+  margin-top: 60px;
 }
 
 .contact-container h2 {
@@ -194,7 +198,7 @@ input:focus, textarea:focus {
 .submit-btn {
   width: 100%;
   background: #0b6b44;
-  color: white;
+  color: whitesmoke;
   padding: 12px;
   border: none;
   border-radius: 8px;
@@ -335,7 +339,7 @@ input:focus, textarea:focus {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   margin-left: 10px;
-  margin-top: 80px;
+  margin-top: 100px;
 
 }
 
@@ -402,7 +406,7 @@ nav {
 
 
 .menu li a {
-  color: white;
+  color: whitesmoke;
   text-decoration: none;
   font-size: 1em;
   transition: color 0.3s;
@@ -593,7 +597,8 @@ main .cards{
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin: 70px auto;
+  margin: 120px auto;
+  margin-left: 250px;
   
   
   }
@@ -666,7 +671,7 @@ main .cards{
 footer{
     grid-area: footer;
     background-color: darkgreen;  
-    color: white;  
+    color: whitesmoke;  
     text-align: center;
     }
 footer h3{
@@ -722,17 +727,35 @@ footer ul li a:hover{
   color: greenyellow;
 }
 
-footer .social{
- margin-top: 15px;
- gap: 10px;
- font-size: 0.8em;
-}
+/*nota: revisar en los estilo de social netork quite la a y puse i*/
 
-footer .social i:hover{
+/* Social Netwrk Styles*/
+.social-links a{
+  text-decoration: none;
+  font-size: 0.9em;
+  color: whitesmoke;
+ 
+}
+.social-links a:hover{
   cursor: pointer;
   color: greenyellow;
+
 }
 
+.social-links i{
+ transition: all 0.3s ease
+}
+
+.social-links i:hover{
+   transform: scale(1.2);
+}
+
+.social-links a[aria-label="Facebook"]   { color: #1877F2; }
+.social-links a[aria-label="Instagram"] { color: #E1306C; }
+/*.social-links a[aria-label="WhatsApp"]  { color: #25D366; }*/
+.social-links a[aria-label="TikTok"]    { color: #000; }
+/*.social-links a[aria-label="YouTube"]   { color: #FF0000; }*/ cx 
+.social-links a[aria-label="Twitter"]   { color: #1DA1F2; }
 footer .foot{
   margin-bottom: 10px;
 }
@@ -759,7 +782,7 @@ footer .foot{
 }
 
 .search_button {
-  background: white;
+  background: whitesmoke;
   border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;

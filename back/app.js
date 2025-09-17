@@ -38,13 +38,13 @@ document.querySelectorAll("footer a[data-page]").forEach((link) => {
   });
 });
 
-// Asignar evento al enlace del contact us button
-document.querySelectorAll("aside a[data-page]").forEach((link) => {
+/* Asignar evento al enlace del contact us button
+document.querySelectorAll("nav a[data-page]").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     loadPage(link.getAttribute("data-page"));
   });
-});
+});*/
 
 // Cargar la página inicial
 loadPage("home.html");
