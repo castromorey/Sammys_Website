@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Si estamos en products.html
+
     const products = document.querySelectorAll(".gallery img");
     if (products.length > 0) {
       products.forEach((product) => {

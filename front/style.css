@@ -14,7 +14,8 @@ body {
   background-color: whitesmoke;
   padding-top: 20px; /* espacio para el nav fijo */
   grid-template-rows: 2em auto auto;
-  grid-template-columns: 3fr 10em;
+  grid-template-columns: 1fr;
+  /*grid-template-columns: 3fr 10em;*/
   grid-template-areas: 'nav nav'
                        'main aside'
                        'footer footer'
@@ -426,6 +427,7 @@ nav {
 /* MAIN CONTENT */
 main {
   grid-area: main;
+
   /*max-width: 1000px;*/
 /*  margin: 10px auto;
   width: 200px;
@@ -444,11 +446,13 @@ main h2{
 }
 
 main .cards{
-  /*display: grid;
+ /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;*/
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  justify-items: center;
+  
 }
 
 
@@ -497,14 +501,14 @@ main .cards{
 .about_us{
   
   margin-top: 40px;
-  margin-left: 80px;
   display: flex;
+  justify-content: center;
+  gap: 70px;
   
 }
 
 .about_us img{
   margin: 50px;
-  margin-left: 100px;
 }
  .paragraphs{
  
@@ -538,6 +542,7 @@ main .cards{
 .contact_us i{
   color: green;
   margin-right: 10px;
+  margin-top: 20px;
 }
 
 .contact_us p{
@@ -686,14 +691,9 @@ footer .container{
 footer .container .box{
   width: 300px;
   height: 100px;
-  /*background-color: rgb(58, 129, 58);*/
   color: whitesmoke;
-  /*border-left: 1px solid whitesmoke;*/
   border-bottom: 1px solid greenyellow;
-  /*border: 1px solid whitesmoke;
-  border-radius: 10px;*/
   font-size: 0.8em;
-  /*margin: 30px auto;*/
 }
 footer .box p, li{
   font-size: 0.8em;
@@ -703,6 +703,8 @@ footer .box p, li{
 
 footer h6{
   margin-top: 15px;
+  margin-bottom: 30px;
+ 
 }
 footer i {
   padding: 5px;
@@ -732,32 +734,32 @@ footer ul li a:hover{
 /* Social Netwrk Styles*/
 .social-links a{
   text-decoration: none;
-  font-size: 0.9em;
-  color: whitesmoke;
- 
+  font-size: 1em;
 }
 .social-links a:hover{
   cursor: pointer;
-  color: greenyellow;
-
 }
 
 .social-links i{
- transition: all 0.3s ease
+ transition: all 0.3s ease;
 }
 
 .social-links i:hover{
-   transform: scale(1.2);
+   transform: scale(1.3);
 }
 
-.social-links a[aria-label="Facebook"]   { color: #1877F2; }
-.social-links a[aria-label="Instagram"] { color: #E1306C; }
+
+
+.social-links a[aria-label="Facebook"]   { color: #076cf0; }
+.social-links a[aria-label="Instagram"] { color: orangered; }
 /*.social-links a[aria-label="WhatsApp"]  { color: #25D366; }*/
 .social-links a[aria-label="TikTok"]    { color: #000; }
-/*.social-links a[aria-label="YouTube"]   { color: #FF0000; }*/ cx 
-.social-links a[aria-label="Twitter"]   { color: #1DA1F2; }
+/*.social-links a[aria-label="YouTube"]   { color: #FF0000; }*/ 
+.social-links a[aria-label="X"]   { color: #fff; }
+
 footer .foot{
   margin-bottom: 10px;
+  margin-top: 15px;
 }
 
 /* SEARCH BAR STYLES */
