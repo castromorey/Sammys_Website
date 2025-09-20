@@ -4,13 +4,8 @@ function loadPage(page) {
     .then((data) => {
       document.getElementById("content").innerHTML = data;
 
-      // 🔑 Forzar scroll al top cada vez que se cambia de "página"
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth", // puedes quitarlo si no quieres animación
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
 
-      // Si cargamos categories.html, inicializamos el slider
       if (page === "categories.html") {
         initSlider();
       }
@@ -20,7 +15,6 @@ function loadPage(page) {
         "<p>Error loading content</p>";
     });
 }
-// ---------------------------------
 
 // Asignar evento a los enlaces del menú
 document.querySelectorAll("nav a[data-page]").forEach((link) => {
@@ -30,21 +24,13 @@ document.querySelectorAll("nav a[data-page]").forEach((link) => {
   });
 });
 
-// Asignar evento al enlace del footer about us
+// Asignar evento al enlace del footer
 document.querySelectorAll("footer a[data-page]").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     loadPage(link.getAttribute("data-page"));
   });
 });
-
-/* Asignar evento al enlace del contact us button
-document.querySelectorAll("nav a[data-page]").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    loadPage(link.getAttribute("data-page"));
-  });
-});*/
 
 // Cargar la página inicial
 loadPage("home.html");
@@ -60,7 +46,6 @@ function initSlider() {
     slides.style.transform = `translateX(${-index * 100}%)`;
   }
 
-  // botones (solo si existen en el DOM)
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
   if (prevBtn && nextBtn) {
@@ -68,19 +53,9 @@ function initSlider() {
     nextBtn.onclick = () => moveSlide(1);
   }
 
-  // slider automático
   setInterval(() => {
     moveSlide(1);
   }, 3000);
-}
-
-//Order button para ordenar los items en las diferentes páginas
-function ordenar() {
-  const contenedor = document.getElementById("matriz");
-  const celdas = Array.from(contenedor.children);
-  celdas.sort((a, b) => a.textContent.localeCompare(b.textContent));
-  contenedor.innerHTML = "";
-  celdas.forEach((celda) => contenedor.appendChild(celda));
 }
 
 // ------------------- SEARCH -------------------
@@ -89,15 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchForm = document.querySelector(".search_icon form");
 
   if (!searchInput || !searchForm) return;
-
-  // Evitar recarga al enviar el form
   searchForm.addEventListener("submit", (e) => e.preventDefault());
 
-  // Buscar al escribir
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase();
 
-    // Si estamos en brands.html
     const brands = document.querySelectorAll(".celda");
     if (brands.length > 0) {
       brands.forEach((brand) => {
@@ -107,49 +78,77 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Si estamos en products.html
-
-    const products = document.querySelectorAll(".gallery img");
+    const products = document.querySelectorAll(".gallery figure");
     if (products.length > 0) {
-      products.forEach((product) => {
-        const altText = product.alt.toLowerCase();
-        product.style.display = altText.includes(query) ? "block" : "none";
+      products.forEach((figure) => {
+        const img = figure.querySelector("img");
+        const altText = img.alt.toLowerCase();
+
+        if (altText.includes(query)) {
+          figure.style.display = "inline-block";
+        } else {
+          figure.style.display = "none";
+        }
       });
     }
   });
 });
 
-/* Code to clean the contact_form information*/
+// ------------------- CONTACT FORM -------------------
 const form = document.getElementById("contactForm");
 const confirmation = document.getElementById("confirmation");
 const mailto = document.getElementById("mailtoLink");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  const fullname = document.getElementById("fullname").value;
-  const company = document.getElementById("company").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
-  const subject = document.getElementById("subject").value;
-  const message = document.getElementById("message").value;
+    const fullname = document.getElementById("fullname").value;
+    const company = document.getElementById("company").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
 
-  // Construir mailto
-  const mailtoHref = `mailto:cmcomputer.network@gmail.com?subject=${encodeURIComponent(
-    subject || "New Contact Form Submission"
-  )}&body=${encodeURIComponent(
-    `Full Name: ${fullname}
+    const mailtoHref = `mailto:cmcomputer.network@gmail.com?subject=${encodeURIComponent(
+      subject || "New Contact Form Submission"
+    )}&body=${encodeURIComponent(
+      `Full Name: ${fullname}
 Company: ${company}
 Email: ${email}
 Phone: ${phone}
 Message: ${message}`
-  )}`;
+    )}`;
 
-  // Abrir cliente de correo
-  mailto.href = mailtoHref;
-  mailto.click();
+    mailto.href = mailtoHref;
+    mailto.click();
 
-  // Limpiar formulario y mostrar confirmación
-  form.reset();
-  confirmation.style.display = "block";
+    form.reset();
+    confirmation.style.display = "block";
+  });
+}
+
+// ------------------- MENÚ HAMBURGUESA -------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const menu = document.querySelector(".menu");
+
+  if (hamburger && menu) {
+    hamburger.addEventListener("click", () => {
+      menu.classList.toggle("active");
+
+      // Cambiar icono ☰ ↔ ✖
+      hamburger.innerHTML = menu.classList.contains("active")
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+  }
 });

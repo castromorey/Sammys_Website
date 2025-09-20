@@ -8,7 +8,7 @@
 
 body {
   display: grid;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
   min-height: 100vh;
   font-family: Arial, sans-serif;
   background-color: whitesmoke;
@@ -16,9 +16,9 @@ body {
   grid-template-rows: 2em auto auto;
   grid-template-columns: 1fr;
   /*grid-template-columns: 3fr 10em;*/
-  grid-template-areas: 'nav nav'
-                       'main aside'
-                       'footer footer'
+  grid-template-areas: 'nav'
+                       'main'
+                       'footer'
 }
 
 /* Brands page styles*/
@@ -502,7 +502,7 @@ main .cards{
   
   margin-top: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   gap: 70px;
   
 }
@@ -732,6 +732,7 @@ footer ul li a:hover{
 /*nota: revisar en los estilo de social netork quite la a y puse i*/
 
 /* Social Netwrk Styles*/
+
 .social-links a{
   text-decoration: none;
   font-size: 1em;
@@ -742,6 +743,7 @@ footer ul li a:hover{
 
 .social-links i{
  transition: all 0.3s ease;
+
 }
 
 .social-links i:hover{
@@ -793,4 +795,294 @@ footer .foot{
 
 .search_button:hover {
   background: #f0f0f0;
+}
+
+/* ================== Responsive Adjustments ================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .menu {
+    gap: 40px;
+  }
+
+  .about_us {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .paragraphs {
+    width: 100%;
+    margin: 0 20px;
+  }
+
+  footer .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  footer .container .box {
+    width: 45%;
+  }
+}
+
+/* =============== Base Mobile Styles =============== */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: whitesmoke;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: darkgreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  z-index: 1000;
+}
+
+.logo img {
+  border-radius: 50%;
+  max-width: 40px;
+}
+
+.menu {
+  display: none; /* oculto en móvil */
+  flex-direction: column;
+  background: darkgreen;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu li a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  font-size: 1.5rem;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+/* MAIN */
+main h2 {
+  text-align: center;
+  margin: 80px 0 20px;
+  color: green;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.card {
+  width: 90%;
+  max-width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* About us */
+.about_us{
+  
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  
+}
+
+.about_us img{
+  margin: 50px;
+}
+ .paragraphs{
+ 
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-top: 45px;
+
+ }
+
+ .paragraphs p{
+  line-height: 1.6em;
+  font-size: 0.8em;
+  text-align: justify;
+  margin-top: 15px;
+  margin-bottom: 10px;
+ 
+ }
+/* Contact us */
+.contact_us {
+  margin: 30px auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Footer */
+footer {
+  background: darkgreen;
+  color: whitesmoke;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+footer .box {
+  width: 100%;
+  border-bottom: 1px solid greenyellow;
+  padding-bottom: 10px;
+  font-size: 0.9em;
+}
+
+/* =============== Media Queries (Tablet & Desktop) =============== */
+@media (min-width: 768px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    background: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: 220px;
+  }
+
+  .about_us {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  footer .container {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  footer .box {
+    width: 250px;
+    border: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  nav {
+    padding: 15px 80px;
+  }
+
+  .menu {
+    gap: 80px;
+  }
+
+  .cards {
+    gap: 40px;
+  }
+
+  .about_us {
+    gap: 70px;
+  }
+}
+
+/* ------------------- MENÚ HAMBURGUESA ------------------- */
+
+.hamburger {
+  font-size: 1.8rem;
+  color: whitesmoke;
+  cursor: pointer;
+  display: block;
+  z-index: 1001; /* encima de todo */
+}
+
+.menu {
+  display: none; /* oculto en móvil */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: darkgreen;
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  top: 60px; /* debajo del nav */
+  left: 0;
+  z-index: 1000;
+}
+
+.menu.active {
+  display: flex !important; /* mostrar menú */
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu li a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: flex !important;
+    flex-direction: row;
+    gap: 40px;
+    position: static;
+    background: none;
+    width: auto;
+    padding: 0;
+  }
+
+  .menu li {
+    margin: 0;
+  }
+
+  .menu li a {
+    font-size: 1rem;
+  }
 }
