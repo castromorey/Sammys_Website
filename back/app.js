@@ -33,9 +33,10 @@ document.querySelectorAll("footer a[data-page]").forEach((link) => {
 });
 
 // Cargar la página inicial
-loadPage("home.html");
+loadPage("terms_conds.html");
 
 // ------------------- SLIDER -------------------
+
 function initSlider() {
   let index = 0;
   const slides = document.getElementById("slides");

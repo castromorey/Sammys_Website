@@ -8,14 +8,13 @@
 
 body {
   display: grid;
-  /*justify-content: space-around;*/
+
   min-height: 100vh;
   font-family: Arial, sans-serif;
   background-color: whitesmoke;
   padding-top: 20px; /* espacio para el nav fijo */
   grid-template-rows: 2em auto auto;
   grid-template-columns: 1fr;
-  /*grid-template-columns: 3fr 10em;*/
   grid-template-areas: 'nav'
                        'main'
                        'footer'
@@ -24,12 +23,10 @@ body {
 /* Brands page styles*/
 
 .coming-soon {
- /* background: linear-gradient(180deg, #f7fbf7 0%, #ffffff 100%);*/
  background: whitesmoke;
   padding: 40px 16px;
   display: flex;
   justify-content: center;
-  /*border-top: 4px solid #e6f4e6;*/
 }
 
 .cs-container {
@@ -42,10 +39,11 @@ body {
   box-sizing: border-box;
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: #1f2933;
+  margin-top: 5%;
 }
 
 .cs-header h1 {
-  margin: 50px 0 30px 0;
+margin-bottom: 5%;
   font-size: 1.6rem;
   color: #064e3b; /* deep green for brand tone */
   letter-spacing: -0.2px;
@@ -54,7 +52,7 @@ body {
 }
 
 .cs-sub {
-  margin: 0 0 22px 0;
+  margin-bottom: 5%;
   color: #374151;
   line-height: 1.5;
   font-size: 0.98rem;
@@ -63,14 +61,25 @@ body {
 .cs-categories {
   list-style: none;
   padding: 0;
-  margin: 0 0 20px 0;
   display: grid;
   gap: 35px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  
 }
 
+/*cs-categories:nth-child(4){
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}*/
+
+.cs-categories li:nth-child(1){ background:rgba(224, 151, 14, 0.603)}
+.cs-categories li:nth-child(2){ background:#8175a0;}
+.cs-categories li:nth-child(3){ background:#88b04b;}
+.cs-categories li:nth-child(4){ background:#f394a4;}
+.cs-categories li:nth-child(5){ background:#76c6cc;}
+
 .cs-categories li {
-  background: #f8faf7;
   border: 1px solid #e6efe6;
   padding: 12px 14px;
   border-radius: 8px;
@@ -138,7 +147,7 @@ body {
 }
 
 /* CONTACT FORM STYLES */
-/* CONTACT FORM STYLES */
+
 .contact-section {
   background: whitesmoke;
   padding: 40px 20px;
@@ -154,7 +163,7 @@ body {
   max-width: 600px;
   width: 100%;
   font-family: Arial, sans-serif;
-  margin-top: 60px;
+  margin-top: 7%;
 }
 
 .contact-container h2 {
@@ -278,19 +287,15 @@ input:focus, textarea:focus {
 }*/
 
 /* Terms & Conditiosn Page Styles*/
-
-.header {
-      margin-top: 45px;
-      color: green;
-      padding: 20px;
+    .terms_header{
+      display: grid;
+      gap: 15px;      
       text-align: center;
+      margin: 8% 0 3% 0;
+      color: green;
+     
     }
-
-    .header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
+  
     .terms_container {
       max-width: 900px;
       margin: 40px auto;
@@ -340,7 +345,8 @@ input:focus, textarea:focus {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   margin-left: 10px;
-  margin-top: 100px;
+  margin-top: 10%;
+  margin-bottom: 5%;
 
 }
 
@@ -392,11 +398,6 @@ nav {
   
 }
 
-.logo img {
-  border-radius: 50%;
-
-}
-
 .menu {
   list-style: none;
   display: flex;
@@ -428,27 +429,10 @@ nav {
 main {
   grid-area: main;
 
-  /*max-width: 1000px;*/
-/*  margin: 10px auto;
-  width: 200px;
-  padding: 10px;
-  background: rgb(240, 230, 230);
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);*/
-}
-
-main h2{
-  text-align: center;
-  margin: 40px auto;
-  color: green;
-  margin-top: 80px;
-
 }
 
 main .cards{
- /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;*/
+
   display: flex;
   justify-content: space-around;
   justify-items: center;
@@ -499,50 +483,43 @@ main .cards{
 /* ********************************** About us html page ******************************** */
 
 .about_us{
-  
-  margin-top: 40px;
+
+ /* margin-top: 40px;*/
   display: flex;
   justify-content: space-around;
   gap: 70px;
-  
 }
 
-.about_us img{
-  margin: 50px;
-}
+
  .paragraphs{
- 
   display: flex;
   flex-direction: column;
   width: 400px;
-  margin-top: 45px;
+
+
 
  }
+
 
  .paragraphs p{
   line-height: 1.6em;
   font-size: 0.8em;
   text-align: justify;
-  margin-top: 15px;
-  margin-bottom: 10px;
- 
  }
 
 /* End about_Us page*/
 
 
-.contact_us{
+
+.contact_us_box{
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 60px;
-  margin-left: 100px;
+  gap: 30px;
+  margin-top: 5%;
 }
 
 .contact_us i{
   color: green;
-  margin-right: 10px;
-  margin-top: 20px;
 }
 
 .contact_us p{
@@ -587,13 +564,7 @@ main .cards{
 }
 
 /* -------------------------------Categories content -------------------------------- */
-/*
-.categories{
-  margin: 50px auto;
-  text-align: center;
-  margin-top: 15px;
 
-}*/
 .slider {
   position: relative;
   width: 80%;
@@ -603,6 +574,7 @@ main .cards{
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   margin: 120px auto;
+  margin-top: 10%;
   margin-left: 250px;
   
   
@@ -713,10 +685,6 @@ footer i {
 
 footer li{
   list-style: none;
-  /*text-align: start;
-  margin: 15px auto;
-  margin-left: 10px;
-  /*font-size: 0.9em;*/
 }
 
 footer ul li a{
@@ -730,8 +698,6 @@ footer ul li a:hover{
 }
 
 /*nota: revisar en los estilo de social netork quite la a y puse i*/
-
-/* Social Netwrk Styles*/
 
 .social-links a{
   text-decoration: none;
@@ -848,10 +814,6 @@ nav {
   z-index: 1000;
 }
 
-.logo img {
-  border-radius: 50%;
-  max-width: 40px;
-}
 
 .menu {
   display: none; /* oculto en móvil */
@@ -881,9 +843,9 @@ nav {
 }
 
 /* MAIN */
-main h2 {
+.home_title h2 {
   text-align: center;
-  margin: 80px 0 20px;
+  margin: 8% 0 3% 0;
   color: green;
 }
 
@@ -906,34 +868,29 @@ main h2 {
 
 /* About us */
 .about_us{
-  
-  margin-top: 40px;
   display: flex;
   justify-content: center;
   gap: 70px;
+  margin-top: 7%;
   
 }
 
 .about_us img{
-  margin: 50px;
+  margin: 7%;
 }
- .paragraphs{
- 
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  margin-top: 45px;
 
- }
 
  .paragraphs p{
   line-height: 1.6em;
   font-size: 0.8em;
   text-align: justify;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-top: 7%;
+  margin-bottom: 7%;
  
  }
+
+
+ 
 /* Contact us */
 .contact_us {
   margin: 30px auto;
