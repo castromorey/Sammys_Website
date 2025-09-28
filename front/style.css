@@ -288,8 +288,6 @@ input:focus, textarea:focus {
 
 /* Terms & Conditiosn Page Styles*/
     .terms_header{
-      display: grid;
-      gap: 15px;      
       text-align: center;
       margin: 8% 0 3% 0;
       color: green;
@@ -843,8 +841,10 @@ nav {
 }
 
 /* MAIN */
-.home_title h2 {
+.home_title {
+  display: grid;
   text-align: center;
+  gap: 15px;
   margin: 8% 0 3% 0;
   color: green;
 }

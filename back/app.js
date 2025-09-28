@@ -33,7 +33,7 @@ document.querySelectorAll("footer a[data-page]").forEach((link) => {
 });
 
 // Cargar la página inicial
-loadPage("terms_conds.html");
+loadPage("home.html");
 
 // ------------------- SLIDER -------------------
 
